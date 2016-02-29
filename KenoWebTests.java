@@ -50,7 +50,6 @@ public class KenoWebTests {
 		// Get the pdf name and pdf size and compare it against the expected result
 		String pdfName = howToPlayPage.getGameGuideName();
 		String pdfSize = howToPlayPage.getGameGuideSize();
-		
 		Assert.assertEquals(pdfName, "Game Guide.pdf");
 		Assert.assertEquals(pdfSize, "3.3MB");
 	}
@@ -68,8 +67,7 @@ public class KenoWebTests {
 		findYourLocalPage.searchVenue(name);
 		
 		// Locate and assert the search results with the expected results
-		List<WebElement> venueList = findYourLocalPage.getVenueList();		
-		for (WebElement venue : venueList) {
+		for (WebElement venue : findYourLocalPage.getVenueList()) {
 			String venueType = venue.getText();
 			Assert.assertEquals(venueType, "PUB");
 		}
